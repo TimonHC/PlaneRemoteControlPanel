@@ -11,6 +11,7 @@ public class Main {
         File f = new File(file);
         int b, count = 0;
         FileReader is = null;
+        String menuSelection;
         try{
             is = new FileReader(f);
             while ((b = is.read()) != -1) {
@@ -30,13 +31,9 @@ public class Main {
                 }
             }
 
-
-
-
         Plane plane = new Plane();
-
-        System.out.println("\nmenu selection:\n1 - set route\n2 - print route\n3 - fly by choosen route\n0 - exit");
-        String menuSelection = plane.scan.next();
+        do{ System.out.println("\nmenu selection:\n1 - set route\n2 - print route\n3 - fly by choosen route\n0 - exit");
+        menuSelection = plane.scan.next();
                     switch (menuSelection) {
                         case ("1"):
                             plane.SetRoute();
@@ -51,6 +48,6 @@ public class Main {
                             System.out.println("Thx 4 using our autopilot plane control system, Goodbye! :-)");
                             break;
                         default: System.out.println("Invalid menu choise");
-                    }
+                    }}while (!menuSelection.equals("0"));
     }
 }
