@@ -9,14 +9,13 @@ public class Main {
     public static void main(String[] args) {
         String file ="data\\file.txt";
         File f = new File(file);
-        int b, count = 0;
+        int b;
         FileReader is = null;
         String menuSelection;
         try{
             is = new FileReader(f);
             while ((b = is.read()) != -1) {
                 System.out.print((char)b);
-                count++;
             }
         }catch (IOException e){
             System.err.print("file error " + e);
